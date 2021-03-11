@@ -2,7 +2,7 @@
 - name: Pull Docker image of ScientificCalculator
   hosts: all
   vars:
-    ansible_python_interpreter: /usr/lib/python2.7 
+    ansible_python_interpreter: /usr/lib/python 
   tasks:
     - name: Pull image ScientificCalculator
       docker_image:
