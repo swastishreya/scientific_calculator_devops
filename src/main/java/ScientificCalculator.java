@@ -1,8 +1,13 @@
 import java.util.*;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
+
 public class ScientificCalculator
 {
     public ScientificCalculator() {
     }
+
+    private static final Logger logger = LogManager.getLogger(ScientificCalculator.class);
 
     public static void main(String args[])
     {
@@ -46,6 +51,7 @@ public class ScientificCalculator
     }
     public int add(int number1, int number2) {
         int result = number1 + number2;
+        logger.info("Executing addition");
         return result;
     }
 }
