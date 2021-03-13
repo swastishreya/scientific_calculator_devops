@@ -16,7 +16,7 @@ public class ScientificCalculatorTest {
 
     @Test
     public void naturalLogTest(){
-        assertEquals("True Positive for Natural Log", 24.0, calculator.naturalLog(4.0), 0.0f);
+        assertEquals("True Positive for Natural Log", 1.0, calculator.naturalLog(2.718), 0.2f);
     }
 
     @Test
