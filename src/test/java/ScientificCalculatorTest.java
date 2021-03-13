@@ -5,16 +5,22 @@ public class ScientificCalculatorTest {
     ScientificCalculator calculator = new ScientificCalculator();
 
     @Test
-    public void additionTest(){
-        assertEquals("Adding two integer numbers for True Positive", 4, calculator.add(2, 2));
-        assertEquals("Adding two double numbers for True Positive", 5, calculator.add(2, 3));
-        assertEquals("Adding two double numbers for True Positive", 89, calculator.add(2, 87));
+    public void squareRootTest(){
+        assertEquals("True Positive for Square Root", 2.0, calculator.squareRoot(4.0), 0.0f);
     }
     
     @Test
-    public void additionTest2(){
-        assertEquals("Adding two integer numbers for True Positive", 4, calculator.add(2, 2));
-        assertEquals("Adding two double numbers for True Positive", 5, calculator.add(2, 3));
-        assertEquals("Adding two double numbers for True Positive", 89, calculator.add(2, 87));
+    public void factorialTest(){
+        assertEquals("True Positive for Factorial", 24, calculator.factorial(4), 0.0f);
+    }
+
+    @Test
+    public void naturalLogTest(){
+        assertEquals("True Positive for Natural Log", 24.0, calculator.naturalLog(4.0), 0.0f);
+    }
+
+    @Test
+    public void powerTest(){
+        assertEquals("True Positive for Power", 64.0, calculator.power(4.0, 3), 0.0f);
     }
 }

@@ -11,9 +11,9 @@ public class ScientificCalculator
 
     public static void main(String args[])
     {
-        int flag=0,ch;
-        int num1;
-        int num2;
+        int flag=0, ch;
+        double num, b;
+        int factnum;
         ScientificCalculator calculator = new ScientificCalculator();
         Scanner reader = new Scanner(System.in);
         System.out.println("Calculator System");
@@ -21,7 +21,10 @@ public class ScientificCalculator
         {
             System.out.println("Option Menu");
             System.out.println("");
-            System.out.println("1) Addition");
+            System.out.println("1) Square Root");
+            System.out.println("2) Factorial");
+            System.out.println("3) Natural Log");
+            System.out.println("4) Power");
             System.out.println("5) Exit");
             System.out.print("Enter your choice: ");
             ch = reader.nextInt();
@@ -34,13 +37,30 @@ public class ScientificCalculator
                 switch(ch)
                 {
                     case 1:
-                        System.out.println("Addition");
-                        System.out.println("Enter two numbers");
-                        System.out.print("Enter number 1: ");
-                        num1 = reader.nextInt();
-                        System.out.print("Enter number 2: ");
-                        num2 = reader.nextInt();
-                        System.out.println(calculator.add(num1, num2));
+                        System.out.println("Square Root");
+                        System.out.print("Enter number: ");
+                        num = reader.nextDouble();
+                        System.out.println(calculator.squareRoot(num));
+                        break;
+                    case 2:
+                        System.out.println("Factorial");
+                        System.out.print("Enter number: ");
+                        factnum = reader.nextInt();
+                        System.out.println(calculator.factorial(factnum));
+                        break;
+                    case 3:
+                        System.out.println("Natural Log");
+                        System.out.print("Enter number: ");
+                        num = reader.nextDouble();
+                        System.out.println(calculator.naturalLog(num));
+                        break;
+                    case 4:
+                        System.out.println("Power");
+                        System.out.print("Enter number: ");
+                        num = reader.nextDouble();
+                        System.out.print("Enter exponent: ");
+                        b = reader.nextDouble();
+                        System.out.println(calculator.power(num,b));
                         break;
                     default: System.out.println("Exiting program due to invalid input");
                         flag=1;
@@ -49,9 +69,30 @@ public class ScientificCalculator
             System.out.println("\n");
         }while(flag==0);
     }
-    public int add(int number1, int number2) {
-        int result = number1 + number2;
-        logger.info("Executing addition");
+    public double squareRoot(double number) {
+        double result = Math.sqrt(number);
+        logger.info("Executing square root function");
+        return result;
+    }
+
+    public int factorial(int number) {
+        int result = number;
+        for( int i = number-1; i >= 1; i--){
+            result = result*i;
+        }
+        logger.info("Executing factorial function");
+        return result;
+    }
+
+    public double naturalLog(double number) {
+        double result = Math.log(number);
+        logger.info("Executing natural log function");
+        return result;
+    }
+
+    public double power(double number, double b) {
+        double result = Math.pow(number, b);
+        logger.info("Executing power function");
         return result;
     }
 }
