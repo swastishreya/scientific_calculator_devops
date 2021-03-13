@@ -22,7 +22,7 @@
                         <configuration>
                             <archive>
                                 <manifest>
-                                    <mainClass>ScientificCalculator</mainClass>
+                                    <mainClass>scientific_calculator.ScientificCalculator</mainClass>
                                 </manifest>
                             </archive>
                             <descriptorRefs>
